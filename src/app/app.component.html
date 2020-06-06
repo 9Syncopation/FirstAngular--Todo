@@ -16,14 +16,14 @@
       type="text"
       class="input-text"
       placeholder="type a todo"
-      [(ngModule)]="TodoValue"
+      [(ngModel)]="TodoValue"
       (keyup.enter)="addItem()"
     />
     <button class="add-btn" (click)="addItem()">Add Todo</button>
     <div class="list">
       <ul>
         <li *ngFor="let item of list">
-          <input type="checkbox" name="isDone" [(ngModule)]="item.isDone" />
+          <input type="checkbox" name="isDone" [(ngModel)]="item.isDone" />
           {{ item.value }}
           <button class="btn" (click)="deleteItem(item.id)">Delete</button>
         </li>
